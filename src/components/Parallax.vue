@@ -15,9 +15,16 @@
   }
 </script>
 
+<!--this fixes when screen too tall for image ( somehow :) )-->
+<style>
+  .parallax__image-container {
+    margin-top: -250px;
+  }
+</style>
+
 <style scoped>
   .parallax-window {
-    min-height: 95vh;
+    min-height: 101vh;
     background: transparent;
   }
   .myTitle {
