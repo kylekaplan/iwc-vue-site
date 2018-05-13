@@ -14,6 +14,7 @@
     </v-toolbar>
     <v-content style="margin-top: -50px">
       <parallax/>
+      <portfolio/>
       <router-view/>
     </v-content>
     <v-footer>
@@ -25,11 +26,14 @@
 
 <script>
   import Parallax from "./components/Parallax";
+  import Portfolio from "./components/Portfolio";
 export default {
   // beforeCreate: function() {
   //   document.body.className = 'hideScrollBar';
   // },
-  components: {Parallax},
+  components: {
+    Portfolio,
+    Parallax},
   data () {
     return {
       offsetTop: 0,

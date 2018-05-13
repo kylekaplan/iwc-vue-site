@@ -15,6 +15,7 @@ import {
   VToolbar,
   VParallax,
   transitions,
+  VCard,
 } from 'vuetify'
 import { Scroll } from 'vuetify/es5/directives'
 
@@ -31,6 +32,7 @@ Vue.use(Vuetify, {
     VToolbar,
     VParallax,
     transitions,
+    VCard,
   },
   directives: {
     Scroll,
