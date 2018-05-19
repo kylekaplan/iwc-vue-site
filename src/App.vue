@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-toolbar v-bind:style="{ display: toolbarVisibility, width: '110%'}" v-scroll="onScroll"
+    <v-toolbar v-bind:style="{ display: toolbarVisibility}" v-scroll="onScroll"
       app
       dense
       fixed
@@ -12,7 +12,7 @@
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
-    <v-content style="margin-top: -50px">
+    <v-content style="margin-top: -50px" id="container" class="container intro-effect-fadeout">
       <parallax/>
       <portfolio/>
       <router-view/>
@@ -49,7 +49,7 @@ export default {
   methods: {
     onScroll (e) {
       this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
-      if(this.offsetTop > 460) {
+      if(this.offsetTop > 370) {
         this.toolbarVisibility = 'block'
       } else {
         this.toolbarVisibility = 'none'
@@ -61,6 +61,13 @@ export default {
 </script>
 
 <style>
+  .toolbar__content, .toolbar__extension {
+    position: relative;
+    z-index: 2000;
+  }
+  .content--wrap {
+    z-index: 1;
+  }
   ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     background-color: #F5F5F5;
@@ -73,5 +80,9 @@ export default {
 
   ::-webkit-scrollbar-thumb {
     background-color: #5b5b5b;
+  }
+  h1 {
+    font-size: 56px;
+    color: #514753;
   }
 </style>
