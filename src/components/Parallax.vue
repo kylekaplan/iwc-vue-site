@@ -14,20 +14,9 @@
   <!--"-->
   <div class="screen-height-wrapper">
     <header class="header">
-      <div class="bg-img"><img src="http://localhost:8080/static/img/background1.jpg" alt="Background Image"></div>
+      <div class="bg-img"><img src="/static/img/background1.jpg" alt="A stary background image"></div>
       <div class="title">
-        <nav class="codrops-demos" style="
-      display: none;
-  ">
-          <a href="index.html">Push</a>
-          <a class="current-demo" href="index2.html">Fade Out</a>
-          <a href="index3.html">Sliced</a>
-          <a href="index4.html">Side</a>
-          <a href="index5.html">Fixed Side</a>
-          <a href="index6.html">Grid</a>
-          <a href="index7.html">Jam 3</a>
-        </nav>
-        <h1 class="myHeader">Ideas Worth Coding</h1>
+        <h1 class="myHeader line-1 anim-typewriter">Ideas Worth Coding</h1>
         <p>Building Dreams</p>
         <p class="subline" style="
        display: none;
@@ -428,16 +417,16 @@
     color: #514753;
   }
 
-  .intro-effect-fadeout .header p:nth-child(3) {
+  .intro-effect-fadeout .header p:nth-child(2) {
     opacity: 1;
     /*color: white;*/
     color: #514753;
   }
-  .intro-effect-fadeout.modify .header p:nth-child(3) {
+  .intro-effect-fadeout.modify .header p:nth-child(2) {
     color: #514753;
   }
 
-  .intro-effect-fadeout .header p:nth-child(3) {
+  .intro-effect-fadeout .header p:nth-child(2) {
     opacity: 0;
     -webkit-transform: translateX(-150px);
     transform: translateX(-150px);
@@ -448,9 +437,38 @@
     will-change: transform;
   }
 
-  .intro-effect-fadeout.modify .header p:nth-child(3) {
+  .intro-effect-fadeout.modify .header p:nth-child(2) {
     opacity: 1;
     -webkit-transform: translateX(0);
     transform: translateX(0);
+  }
+
+  .intro-effect-fadeout .line-1{
+    /*position: relative;*/
+    /*top: 50%;*/
+    /*width: 24em;*/
+    /*margin: 0 auto;*/
+    border-right: 2px solid rgba(255,255,255,.75);
+    /*font-size: 180%;*/
+    /*text-align: center;*/
+    white-space: nowrap;
+    overflow: hidden;
+    /*transform: translateY(-50%);*/
+    line-height: 75px;
+  }
+  .intro-effect-fadeout .anim-typewriter{
+    animation: typewriter 1.2s steps(16) 0.7s 1 normal both,
+    blinkTextCursor 1100ms steps(16) infinite normal;
+  }
+  .intro-effect-fadeout.modify .line-1 {
+    border: 0;
+  }
+  @keyframes typewriter{
+    from{width: 0;}
+    to{width: 9em;}
+  }
+  @keyframes blinkTextCursor{
+    from{border-right-color: rgba(255,255,255,.75);}
+    to{border-right-color: transparent;}
   }
 </style>

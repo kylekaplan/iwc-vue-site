@@ -5,12 +5,12 @@
     </div>
     <v-layout row wrap align-center class="caption-style-4">
       <v-flex v-for="item in items" :key="item.key" xs12 sm6 lg6 xl3>
-        <li>
+        <li :style="{background: item.logoColor}">
           <img :src="item.logo" alt="">
           <div class="caption">
             <div class="blur"></div>
             <div class="caption-text">
-              <h1>{{item.name}}</h1>
+              <h1 style="display: none">{{item.name}}</h1>
               <p>{{item.description}}</p>
             </div>
           </div>
@@ -41,7 +41,7 @@
     </v-layout>
     <svg id="svg-filter">
       <filter id="svg-blur">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="3"></feGaussianBlur>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1"></feGaussianBlur>
         <!--<feColorMatrix type="matrix"-->
                        <!--values="0.39 0.769 0.189 0  0-->
           <!--0.349 0.686 0.168 0  0-->
@@ -124,6 +124,43 @@
     transform: translateY(0);
   }
 
+
+  .background-blur {
+    /*!* All the background image supports *!*/
+    transform: translate(0px, 0px, 0px);
+    background-image: -webkit-linear-gradient(bottom left, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
+    background-image: -moz-linear-gradient(bottom left, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
+    background-image: -o-linear-gradient(bottom left, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
+    background-image: linear-gradient(to top right, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    /* blur filters */
+    -webkit-filter: blur(20px);
+    -o-filter: blur(20px);
+    filter: blur(20px);
+  }
+
+  .background-blur:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+
+    /* Setting the gradient. Adds depth, and glass like effect. */
+    background-image: -webkit-linear-gradient(289deg, rgba(43,40,50,0.8) 0%, rgba(43,40,50,0.4) 46%, rgba(0,0,0,0.05) 50%);
+    background-image: -moz-linear-gradient(289deg, rgba(43,40,50,0.8) 0%, rgba(43,40,50,0.4) 46%, rgba(0,0,0,0.05) 50%);
+    background-image: -o-linear-gradient(289deg, rgba(43,40,50,0.8) 0%, rgba(43,40,50,0.4) 46%, rgba(0,0,0,0.05) 50%);
+    background-image: linear-gradient(-19deg, rgba(43,40,50,0.8) 0%, rgba(43,40,50,0.4) 46%, rgba(0,0,0,0.05) 50%);
+
+    /* Blur to add depth. High to create smooth transition */
+    -webkit-filter: blur(70px);
+    -o-filter: blur(70px);
+    filter: blur(70px);
+  }
+
   .caption-style-4 li {
     padding: 0px;
     position: relative;
@@ -132,6 +169,21 @@
     width: 100%;
     height: 355px;
     background: black;
+    list-style-type: none;
+
+    /* Enable GPU Rendering */
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition: filter 0.25s ease-in-out;
+    -moz-transition: filter 0.25s ease-in-out;
+    -o-transition: filter 0.25s ease-in-out;
+    -ms-transition: filter 0.25s ease-in-out;
+    transition: filter 0.25s ease-in-out;
+  }
+  .caption-style-4 li:hover {
+    /*filter: sepia(0.5);*/
   }
   .caption-style-4 img {
     -webkit-transition: all 0.25s ease-in-out;
@@ -141,29 +193,31 @@
     transition: all 0.25s ease-in-out;
   }
   .caption-style-4 img {
-    margin: 0px;
     padding: 0px;
     z-index: 4;
     position: absolute;
-    top: 0;
+    top: -33%;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
     max-width: 100%;
-    will-change: transform, filter;
+    /*will-change: filter;*/
+    -webkit-transform: translateY(29%);
+    transform: translateY(29%);
   }
   .caption-style-4 li:hover img {
-    transform: scale(1.15,1.15);
-    -webkit-transform: scale(1.15,1.15);
-    -moz-transform: scale(1.15,1.15);
-    -ms-transform: scale(1.15,1.15);
-    -o-transform: scale(1.15,1.15);
+    transform: scale(1.1,1.1);
+    -webkit-transform: scale(1.1,1.1);
+    -moz-transform: scale(1.1,1.1);
+    -ms-transform: scale(1.1,1.1);
+    -o-transform: scale(1.1,1.1);
     /*filter: grayscale(1);*/
-    filter: url(#svg-blur);
-    -webkit-filter: url(#svg-blur);
+    /*filter: url(#svg-blur);*/
+    /*-webkit-filter: url(#svg-blur);*/
     /*opacity: 0.8;*/
   }
+
   #svg-filter { display: none; }
 
   .caption-style-4 .caption {
@@ -176,18 +230,20 @@
     left: 0;
     right: 0;
     margin: auto;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    -ms-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     will-change: opacity;
   }
   .caption-style-4 li:hover .caption {
     opacity: 1;
   }
   .caption-style-4 .blur {
-    background-color: rgba(0,0,0,0.72);
+    /*background-color: rgba(0,0,0,0.55);*/
+    background: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.20) 35%, rgba(0, 1, 10, 0.55) 100%);
+    background: -webkit-linear-gradient(top, hsla(0, 0%, 0%, 0.20) 35%, rgba(0, 1, 10, 0.55) 100%);
     height: 100%;
     width: 100%;
     z-index: 5;
@@ -197,10 +253,10 @@
     z-index: 10;
     color: #fff;
     position: absolute;
-    width: 66%;
+    width: 81%;
     height: 100%;
     text-align: center;
-    top: 115px;
+    top: 57%;
     left: 0;
     right: 0;
     margin: auto;
@@ -210,6 +266,33 @@
     font-size: 28px;
     color: white;
     text-align: center;
+  }
+  .caption-style-4 .caption-text p {
+    margin: 1em 0 0;
+    padding: 1em;
+    border: 1px solid #fff;
+    opacity: 0;
+    letter-spacing: 1px;
+    -webkit-transition: opacity 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    -webkit-transform: translate3d(0,20px,0) scale(1.1);
+    transform: translate3d(0,20px,0) scale(1.1);
+  }
+  .caption-style-4 li:hover .caption-text p {
+     opacity: 1;
+     -webkit-transform: translate3d(0,0,0) scale(1);
+      transform: translate3d(0,0,0) scale(1);
+   }
+  .caption-style-4 li:hover .caption-text {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+  .caption-style-4 .caption-text {
+    /*margin-top: 20%;*/
+    /* -webkit-transition: -webkit-transform 0.35s; */
+    transition: transform 0.35s;
+    /* -webkit-transform: translate3d(0,20px,0); */
+    transform: translate3d(0,20px,0);
   }
 
 
