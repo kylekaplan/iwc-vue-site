@@ -24,6 +24,15 @@
   </v-app>
 </template>
 
+<style>
+  .container {
+    margin: 0;
+    max-width: 100%;
+    z-index: 1;
+  }
+</style>
+
+
 <script>
   import Parallax from "./components/Parallax";
   import Portfolio from "./components/Portfolio";
@@ -49,7 +58,7 @@ export default {
   methods: {
     onScroll (e) {
       this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
-      if(this.offsetTop > 370) {
+      if(this.offsetTop > 310) {
         this.toolbarVisibility = 'block'
       } else {
         this.toolbarVisibility = 'none'
