@@ -7,9 +7,11 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --remote=gh-pages"
   },
   "dependencies": {
+    "push-dir": "^0.4.1",
     "vue": "^2.5.2",
     "vue-parallaxy": "^1.1.1",
     "vue-router": "^3.0.1",
@@ -60,7 +62,7 @@
   },
   "engines": {
     "node": ">= 6.0.0",
-    "npm": ">= 3.0.0"
+    "npm": ">= 6.0.1-next.0"
   },
   "browserslist": [
     "> 1%",
