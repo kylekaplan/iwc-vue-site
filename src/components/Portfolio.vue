@@ -143,10 +143,13 @@
     right: 0;
     z-index: -1;
   }
-
   .ourWork:before{
     top: -60px;
   }
+  .ourWork:after {
+    bottom: -60px;
+  }
+
   .intro-effect-fadeout:not(.notrans) .ourWork > div {
     -webkit-transition-duration: 0.5s;
     transition-duration: 0.5s;

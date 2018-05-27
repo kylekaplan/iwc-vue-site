@@ -1,11 +1,16 @@
 <template>
   <div
-    data-aos="fade-up"
+    data-aos="slide-right"
     data-aos-easing="ease-in-sin"
+    style="margin-top: 110px; background: #fafafa"
   >
-  <v-container fluid>
+  <v-container grid-list-md text-xs-center>
   <v-form ref="form" v-model="valid" lazy-validation action="https://formspree.io/ideasworthcoding@gmail.com"
-          method="POST">
+          method="POST" class="form">
+    <div class="form-header" >
+      <p>Contact Us</p>
+      <hr class="style-six">
+    </div>
     <v-text-field
       v-model="name"
       name="name"
@@ -37,7 +42,7 @@
     >
       submit
     </v-btn>
-    <v-btn @click="clear">clear</v-btn>
+    <v-btn @click="clear" >clear</v-btn>
   </v-form>
   </v-container>
   </div>
@@ -83,5 +88,32 @@
 <style scoped>
   .primary--text {
     color: #4487ee !important;
+  }
+  .form {
+    width: 70%;
+    margin: 0 auto;
+    padding: 12px;
+    background: #eeeeee;
+    text-align: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .form-header {
+    margin: -10px;
+    height: 50px;
+    background: #f5f5f5;
+    margin-bottom: 10px;
+  }
+  .form-header p {
+    font-size: 22px;
+    padding: 10px;
+    color: brown;
+  }
+  hr.style-six {
+    position: relative;
+    bottom: 18px;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
 </style>
