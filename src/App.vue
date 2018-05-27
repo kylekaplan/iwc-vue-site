@@ -15,6 +15,7 @@
     <v-content style="margin-top: -50px" id="container" class="container intro-effect-fadeout">
       <parallax/>
       <portfolio/>
+      <contact-us/>
       <router-view/>
     </v-content>
     <v-footer>
@@ -27,7 +28,7 @@
 <style>
   .container {
     margin: 0;
-    max-width: 100%;
+    max-width: 100% !important;
     z-index: 1;
   }
 </style>
@@ -36,13 +37,16 @@
 <script>
   import Parallax from "./components/Parallax";
   import Portfolio from "./components/Portfolio";
+  import ContactUs from "./components/ContactUs"
 export default {
   // beforeCreate: function() {
   //   document.body.className = 'hideScrollBar';
   // },
   components: {
     Portfolio,
-    Parallax},
+    Parallax,
+    ContactUs,
+  },
   data () {
     return {
       offsetTop: 0,

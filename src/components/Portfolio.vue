@@ -1,10 +1,17 @@
 <template child-flex>
-  <v-container fullscreen grid-list-xl text-xs-center justify-end class="ourWork noise" :class="{ yellow: isActive }" v-scroll="onScroll">
-    <div>
+  <!--:class="{ yello: isActive }"-->
+  <div
+    data-aos="fade-up"
+    data-aos-easing="ease-in-sin"
+  >
+  <v-container fullscreen grid-list-xl text-xs-center justify-end class="ourWork noise">
+    <div >
       <h1>Our Work</h1>
-    </div>
     <v-layout row wrap align-center class="caption-style-4">
-      <v-flex v-for="item in items" :key="item.key" xs12 sm6 lg6 xl3>
+      <v-flex v-for="item in items" :key="item.key" xs12 sm6 lg6 xl3 v-scroll="onScroll">
+        <div data-aos="zoom-in"
+             data-aos-easing="linear"
+             data-aos-offset="50">
         <li :style="{background: item.logoColor}">
           <img :src="item.logo" :alt="item.name">
           <div class="caption">
@@ -15,6 +22,7 @@
             </div>
           </div>
         </li>
+        </div>
         <!--<v-card-->
           <!--width="100%"-->
           <!--style="max-width: 425px; margin: 0 auto;"-->
@@ -49,7 +57,9 @@
             <!--0  0 0 1  0" />-->
       </filter>
     </svg>
+    </div>
   </v-container>
+  </div>
 </template>
 
 <script>
@@ -58,6 +68,8 @@
     data () {
       return {
         isActive: false,
+        fadeUp: 'fade-up',
+        offsetTop: 0,
         items: [
           {
             key: 1,
@@ -85,25 +97,27 @@
             name: 'Pie Guy',
             logo: '/static/img/portfolio/nope.jpg',
             logoColor: '#FFF',
-            description: 'Comming Soon'
+            description: 'Coming Soon'
           },
         ],
       }
     },
     methods: {
       onScroll (e) {
-        // this.isActive = !this.isActive;
+        // this.offsetTop = document.getElementById("scroll-target").scrollTop;
+        this.isActive = true;
+        // this.isActive = true;
+        // if(this.offsetTop > 1) {
+        //   this.isActive = !this.isActive;
+        // }
       }
-    },
+    }
   }
 </script>
 
 <!--some hover effects: https://tympanus.net/Development/HoverEffectIdeas/-->
 <!--more effects: https://tympanus.net/Development/PageLoadingEffects/index.html-->
 <style scoped>
-  .yellow {
-    color: yellow !important;
-  }
   .noise {
     background-color: #F5F5F5;
     /*background-image: url("https://images.pexels.com/photos/360912/pexels-photo-360912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");*/
@@ -116,7 +130,6 @@
   .ourWork {
     position: relative;
     z-index: 1000;
-    /*margin-top: 110px;*/
   }
   .ourWork:before, .ourWork:after {
     content: "";
@@ -198,7 +211,8 @@
     height: 355px;
     background: black;
     list-style-type: none;
-    box-shadow: -60px 0px 100px -90px #000000, 60px 0px 100px -90px #000000;
+    /*box-shadow: -60px 0px 100px -90px #000000, 60px 0px 100px -90px #000000;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     /* Enable GPU Rendering */
     -webkit-transform: translateZ(0);

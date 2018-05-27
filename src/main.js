@@ -16,8 +16,13 @@ import {
   VParallax,
   transitions,
   VCard,
+  VForm,
+  VTextField,
 } from 'vuetify'
-import { Scroll } from 'vuetify/es5/directives'
+import { Scroll} from 'vuetify/es5/directives'
+
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 import '../node_modules/vuetify/src/stylus/app.styl'
 Vue.use(Vuetify, {
@@ -33,6 +38,8 @@ Vue.use(Vuetify, {
     VParallax,
     transitions,
     VCard,
+    VForm,
+    VTextField,
   },
   directives: {
     Scroll,
@@ -46,7 +53,7 @@ Vue.use(Vuetify, {
     success: '#4CAF50',
     warning: '#FFC107'
   }
-})
+});
 
 Vue.config.productionTip = false
 
@@ -55,5 +62,8 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
-})
+  template: '<App/>',
+  mounted() {
+    AOS.init();
+  },
+});

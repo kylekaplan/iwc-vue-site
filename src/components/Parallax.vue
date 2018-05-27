@@ -14,15 +14,15 @@
   <!--"-->
   <div class="screen-height-wrapper">
     <header class="header">
-      <div class="bg-img"><img src="/static/img/background1.jpg" alt="A stary background image"></div>
+      <div class="bg-img"><img src="/static/img/background1.jpg" alt="A milky-way background image"></div>
       <div class="title">
         <h1 class="myHeader line-1 anim-typewriter">Ideas Worth Coding</h1>
         <p>Love What You Do</p>
         <div class="us">
           <p class="subline">
-            At Ideas Worth Coding we turn dreams into reality. We love what we do and we think you should feel the same way too. Have a light-bulb moment you think is a great idea? We'll bring it to life.
-            Our team consists of bright individuals who think different which we think is key to success. Creativity and innovation are at the center of what we do, and clients can be sure that their best interests will always
-            be placed first.
+            At Ideas Worth Coding we turn dreams into reality. We love what we do and we think you should feel the same way too. Have a light-bulb moment you think is a great idea?
+            We'll bring it to life. Our team consists of bright individuals who think different which we think is key to success. Creativity and innovation are at the center of what we do,
+            and clients can be sure that their best interests will always be placed first.
           </p>
           <img src="/static/img/cliff1.png"/>
         </div>
@@ -423,7 +423,6 @@
     /*max-width: 900px;*/
   /*}*/
 
-  .intro-effect-fadeout.modify .header h1,
   .intro-effect-fadeout .header p {
     color: #514753;
   }
@@ -431,7 +430,6 @@
   .intro-effect-fadeout .header p {
     margin-left: 11%;
   }
-
 
   .intro-effect-fadeout .header p:nth-child(2) {
     color: #514753;
@@ -445,9 +443,22 @@
     will-change: transform;
   }
 
+  .intro-effect-fadeout.modify .header h1,
+  .intro-effect-fadeout.modify .header p:nth-child(2) {
+    /*color: #6d377d;*/
+    color: #514753;
+    /*font: bold 200px arial, sans-serif;*/
+    /*background-color: #565656;*/
+    /*color: transparent;*/
+    text-shadow: 2px 2px 3px rgba(156, 156, 156, 0.5);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+  }
+
   .intro-effect-fadeout.modify .header p:nth-child(2) {
     opacity: 1;
-    color: #514753;
+    /*color: #514753;*/
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
