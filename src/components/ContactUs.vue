@@ -1,5 +1,5 @@
 <template>
-  <div style="background: sienna;">
+  <div class="about-us">
   <v-container grid-list-md text-xs-center>
     <p class="my-title">Let's Build Something</p>
   <v-form ref="form" v-model="valid" lazy-validation action="https://formspree.io/ideasworthcoding@gmail.com"
@@ -83,6 +83,10 @@
 </script>
 
 <style scoped>
+  .about-us {
+    background: sienna;
+    background: #fd6d28;
+  }
   .primary--text {
     color: #4487ee !important;
   }

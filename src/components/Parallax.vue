@@ -486,32 +486,41 @@
     /*color: sienna;*/
     /*color: indigo;*/
   /*}*/
-  .intro-effect-fadeout .line-1{
-    /*position: relative;*/
-    /*top: 50%;*/
-    /*width: 24em;*/
-    /*margin: 0 auto;*/
-    border-right: 2px solid rgba(255,255,255,.75);
-    /*font-size: 180%;*/
-    /*text-align: center;*/
-    white-space: nowrap;
-    overflow: hidden;
-    /*transform: translateY(-50%);*/
-    line-height: 75px;
+  @media only screen and (max-width: 740px) {
+    .myHeader {
+      width: 350px !important;
+      margin-bottom: 10px !important;
+    }
   }
-  .intro-effect-fadeout .anim-typewriter{
-    animation: typewriter 1.2s steps(16) 0.7s 1 normal both,
-    blinkTextCursor 1100ms steps(16) infinite normal;
-  }
-  .intro-effect-fadeout.modify .line-1 {
-    border: 0;
-  }
-  @keyframes typewriter{
-    from{width: 0;}
-    to{width: 9em;}
-  }
-  @keyframes blinkTextCursor{
-    from{border-right-color: rgba(255,255,255,.75);}
-    to{border-right-color: transparent;}
+  @media only screen and (min-width: 740px) {
+    .intro-effect-fadeout .line-1{
+      /*position: relative;*/
+      /*top: 50%;*/
+      /*width: 24em;*/
+      /*margin: 0 auto;*/
+      border-right: 2px solid rgba(255,255,255,.75);
+      /*font-size: 180%;*/
+      /*text-align: center;*/
+      white-space: nowrap;
+      overflow: hidden;
+      /*transform: translateY(-50%);*/
+      line-height: 75px;
+    }
+    .intro-effect-fadeout .anim-typewriter{
+      animation: typewriter 1.2s steps(16) 0.7s 1 normal both,
+      blinkTextCursor 1100ms steps(16) infinite normal;
+    }
+    .intro-effect-fadeout.modify .line-1 {
+      border: 0;
+    }
+
+    @keyframes typewriter{
+      from{width: 0;}
+      to{width: 9em;}
+    }
+    @keyframes blinkTextCursor{
+      from{border-right-color: rgba(255,255,255,.75);}
+      to{border-right-color: transparent;}
+    }
   }
 </style>

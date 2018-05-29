@@ -31,10 +31,9 @@
   }
   .content--wrap {
     background: #4a4a4a;
-    /*background: brown;*/
-    /*background-color: #708090;*/
-    /*background: darkslategray;*/
-    /*background: #508587;*/
+    background: #194254;
+    /*background: #03435f;*/
+    /*background: #116e98;*/
   }
 </style>
 
