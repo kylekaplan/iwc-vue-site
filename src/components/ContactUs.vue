@@ -1,12 +1,9 @@
 <template>
-  <div
-    data-aos="slide-right"
-    data-aos-easing="ease-in-sin"
-    style="margin-top: 110px; background: #fafafa"
-  >
+  <div style="background: sienna;">
   <v-container grid-list-md text-xs-center>
+    <p class="my-title">Let's Build Something</p>
   <v-form ref="form" v-model="valid" lazy-validation action="https://formspree.io/ideasworthcoding@gmail.com"
-          method="POST" class="form">
+          method="POST" class="form" data-aos="slide-up" data-aos-easing="ease-in-sin">
     <div class="form-header" >
       <p>Contact Us</p>
       <hr class="style-six">
@@ -89,9 +86,19 @@
   .primary--text {
     color: #4487ee !important;
   }
+  .my-title {
+    top: 75px;
+    text-align: center;
+    font-size: 43px;
+    font-weight: bold;
+    position: relative;
+    color: black;
+  }
   .form {
     width: 70%;
     margin: 0 auto;
+    margin-top: 110px;
+    margin-bottom: 50px;
     padding: 12px;
     background: #eeeeee;
     text-align: left;
@@ -106,7 +113,9 @@
   .form-header p {
     font-size: 22px;
     padding: 10px;
-    color: brown;
+    /*color: brown;*/
+    /*color: sienna;*/
+    color: black;
   }
   hr.style-six {
     position: relative;

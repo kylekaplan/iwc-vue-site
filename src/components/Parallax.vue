@@ -18,25 +18,13 @@
       <div class="title">
         <h1 class="myHeader line-1 anim-typewriter">Ideas Worth Coding</h1>
         <p>Love What You Do</p>
-        <div class="us">
-          <p class="subline">
-            At Ideas Worth Coding we turn dreams into reality. We love what we do and we think you should feel the same way too. Have a light-bulb moment you think is a great idea?
-            We'll bring it to life. Our team consists of bright individuals who think different which we think is key to success. Creativity and innovation are at the center of what we do,
-            and clients can be sure that their best interests will always be placed first.
-          </p>
-          <img src="/static/img/cliff1.png"/>
-        </div>
       </div>
     </header>
-    <!--<p>-->
-      <!--We may define a food to be any substance which will repair the functional waste of the body, increase its growth, or maintain the heat, muscular, and nervous energy.-->
-    <!--</p>-->
   </div>
 </template>
 
 
 <script>
-  import Parallax from 'vue-parallaxy'
   export default {
     data: () => ({
       // ......data of your component
@@ -184,7 +172,8 @@
           isRevealed,
           // noscroll,
           isAnimating,
-          container = document.getElementById('container');
+          container = document.getElementById('container'),
+          us = document.getElementById('us');
 
         // trigger = container.querySelector( 'button.trigger' );
 
@@ -203,6 +192,7 @@
 
           if (classie.has(container, 'notrans')) {
             classie.remove(container, 'notrans');
+            classie.remove(us, 'notrans');
             return false;
           }
 
@@ -223,11 +213,13 @@
 
           if (reveal) {
             classie.add(container, 'modify');
+            classie.add(us, 'modify');
           }
           else {
             // noscroll = true;
             // disable_scroll();
             classie.remove(container, 'modify');
+            classie.remove(us, 'modify');
           }
 
           // simulating the end of the transition:
@@ -251,6 +243,8 @@
           isRevealed = true;
           classie.add(container, 'notrans');
           classie.add(container, 'modify');
+          classie.add(us, 'notrans');
+          classie.add(us, 'modify');
         }
 
         window.addEventListener('scroll', scrollPage);
@@ -285,6 +279,7 @@
     min-width: 100%;
     min-height: 100%;
     height: 101vh;
+
   }
 
   /*for the cool effect*/
@@ -297,6 +292,7 @@
     bottom: 0;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    box-shadow: 0 5px 6px #00000047;
   }
   .intro-effect-fadeout .bg-img::after {
     content: '';
@@ -333,8 +329,8 @@
   .screen-height-wrapper {
     position: relative;
     z-index: 2000;
-    min-height: 280px;
-    height: 120vh;
+    min-height: 500px;
+    height: 101vh;
     /*background-image: url("/static/img/cliff1.png");*/
     /*background-repeat: no-repeat;*/
     /*background-position: bottom right;*/
@@ -346,7 +342,7 @@
     left: 0;
     height: 101vh;
     margin: 0 auto;
-    min-height: 560px;
+    min-height: 500px;
     width: 100%;
   }
 
@@ -379,8 +375,7 @@
   .intro-effect-fadeout:not(.notrans) .bg-img::after,
   .intro-effect-fadeout:not(.notrans) .header h1,
   .intro-effect-fadeout:not(.notrans) .header p,
-  .intro-effect-fadeout:not(.notrans) .title,
-  .intro-effect-fadeout:not(.notrans)  .us {
+  .intro-effect-fadeout:not(.notrans) .title {
     -webkit-transition-duration: 0.5s;
     transition-duration: 0.5s;
   }
@@ -425,6 +420,9 @@
 
   .intro-effect-fadeout .header p {
     color: #514753;
+    /*color: sienna;*/
+    /*color: indigo;*/
+    color: whitesmoke;
   }
   .intro-effect-fadeout .header h1,
   .intro-effect-fadeout .header p {
@@ -484,46 +482,9 @@
     transform: translateX(0);
   }
 
-  .intro-effect-fadeout .header .us {
-    color: #514753;
-    opacity: 0;
-    -webkit-transform: translateY(150px);
-    transform: translateY(150px);
-    font-size: 30px;
-    line-height: 41px;
-    position: absolute;
-    top: 37vh;
-    /*bottom: -183px;*/
-    /*margin-top: 60px;*/
-    /*margin-bottom: 70px;*/
-    /*text-align: center;*/
-    will-change: transform;
-  }
-
-  .intro-effect-fadeout.modify .header .us {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  .us p {
-    float: left;
-    width: 60%;
-  }
-  .us img {
-    float: right;
-    position: absolute;
-    width: 27%;
-    padding: 0;
-    top: -25%;
-    right: 0;
-    /* bottom: 0; */
-  }
-
   /*.subline {*/
-    /*!*display: none;*!*/
-    /*position: relative;*/
-    /*bottom: -183px;*/
-    /*font-size: 32px;*/
+    /*color: sienna;*/
+    /*color: indigo;*/
   /*}*/
   .intro-effect-fadeout .line-1{
     /*position: relative;*/

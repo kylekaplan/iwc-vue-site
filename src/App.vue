@@ -14,14 +14,12 @@
     </v-toolbar>
     <v-content style="margin-top: -50px" id="container" class="container intro-effect-fadeout">
       <parallax/>
+      <about-us/>
       <portfolio/>
       <contact-us/>
+      <my-footer/>
       <router-view/>
     </v-content>
-    <v-footer>
-      <h6>&copy; 2017</h6>
-      <h6>Photo by Clemente Ruiz Abenza on Unsplash</h6>
-    </v-footer>
   </v-app>
 </template>
 
@@ -31,13 +29,22 @@
     max-width: 100% !important;
     z-index: 1;
   }
+  .content--wrap {
+    background: #4a4a4a;
+    /*background: brown;*/
+    /*background-color: #708090;*/
+    /*background: darkslategray;*/
+    /*background: #508587;*/
+  }
 </style>
 
 
 <script>
   import Parallax from "./components/Parallax";
   import Portfolio from "./components/Portfolio";
-  import ContactUs from "./components/ContactUs"
+  import ContactUs from "./components/ContactUs";
+  import MyFooter from "./components/MyFooter";
+  import AboutUs from "./components/AboutUs"
 export default {
   // beforeCreate: function() {
   //   document.body.className = 'hideScrollBar';
@@ -46,6 +53,8 @@ export default {
     Portfolio,
     Parallax,
     ContactUs,
+    MyFooter,
+    AboutUs,
   },
   data () {
     return {

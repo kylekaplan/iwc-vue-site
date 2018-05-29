@@ -3,9 +3,11 @@
   <div
     data-aos="fade-up"
     data-aos-easing="ease-in-sin"
+    data-aos-offset="200px"
+    data-aos-duration="275"
   >
   <v-container fullscreen grid-list-xl text-xs-center justify-end class="ourWork noise">
-    <div >
+    <div style="margin-top: -15px;">
       <h1>Our Work</h1>
     <v-layout row wrap align-center class="caption-style-4">
       <v-flex v-for="item in items" :key="item.key" xs12 sm6 lg6 xl3 v-scroll="onScroll">
@@ -145,9 +147,13 @@
   }
   .ourWork:before{
     top: -60px;
+    box-shadow: 0 -5px 6px #00000047;
+    transform: skewY(-3deg);
   }
   .ourWork:after {
     bottom: -60px;
+    box-shadow: 0px 5px 6px #00000047;
+    transform: skewY(2deg);
   }
 
   .intro-effect-fadeout:not(.notrans) .ourWork > div {
