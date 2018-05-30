@@ -14,16 +14,18 @@
         <div data-aos="zoom-in"
              data-aos-easing="linear"
              data-aos-offset="50">
-        <li :style="{background: item.logoColor}">
-          <img :src="item.logo" :alt="item.name">
-          <div class="caption">
-            <div class="blur"></div>
-            <div class="caption-text">
-              <h1 style="display: none">{{item.name}}</h1>
-              <p>{{item.description}}</p>
-            </div>
-          </div>
-        </li>
+          <a :href="item.link" target="_blank">
+            <li :style="{background: item.logoColor}">
+              <img :src="item.logo" :alt="item.name" />
+              <div class="caption">
+                <div class="blur"></div>
+                <div class="caption-text">
+                  <h1 style="display: none">{{item.name}}</h1>
+                  <p>{{item.description}}</p>
+                </div>
+              </div>
+            </li>
+          </a>
         </div>
         <!--<v-card-->
           <!--width="100%"-->
@@ -78,28 +80,32 @@
             name: 'EdiBull',
             logo: '/static/img/portfolio/edibull1.png',
             logoColor: '#006649',
-            description: 'An App that finds events offering free food on the USF Campus'
+            description: 'An App that finds events offering free food on the USF Campus',
+            link: 'https://w8ghw.app.goo.gl/VunL',
           },
           {
             key: 2,
             name: 'Availa-Bull',
             logo: '/static/img/portfolio/availa-bull.jpg',
             logoColor: '#f5f5f5',
-            description: 'A Website that will send you an email as soon as a seat opens up in the class you want'
+            description: 'A Website that will send you an email as soon as a seat opens up in the class you want',
+            link: 'http://availa-bull.com/',
           },
           {
             key: 3,
             name: 'USF PAMSA',
             logo: '/static/img/portfolio/pamsa1.jpg',
             logoColor: '#f5f5f5',
-            description: 'The official app of USF PAMSA'
+            description: 'The official app of USF PAMSA',
+            link: 'https://itunes.apple.com/us/app/usf-pamsa/id1350090439',
           },
           {
             key: 4,
             name: 'Pie Guy',
             logo: '/static/img/portfolio/nope.jpg',
-            logoColor: '#FFF',
-            description: 'Coming Soon'
+            logoColor: '#f5f5f5',
+            description: 'Coming Soon',
+            // link: 'https://w8ghw.app.goo.gl/VunL',
           },
         ],
       }
@@ -211,9 +217,13 @@
     filter: blur(70px);
   }
 
+  .caption-style-4 {
+    margin: auto 20px !important;
+  }
   .caption-style-4 li {
-    padding: 0px;
+    padding: 0;
     position: relative;
+    display: inline-block;
     overflow: hidden;
     margin: 0 auto;
     width: 90%;

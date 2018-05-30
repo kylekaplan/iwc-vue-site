@@ -116,10 +116,11 @@
   }
   .form-header p {
     font-size: 22px;
+    font-weight: bold;
     padding: 10px;
     /*color: brown;*/
     /*color: sienna;*/
-    color: black;
+    color: #514753;
   }
   hr.style-six {
     position: relative;

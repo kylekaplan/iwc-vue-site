@@ -13,6 +13,8 @@
 
 <style scoped>
   .footer-wrapper {
+    background: #eeeeee;
+    /*box-shadow: 0 -5px 6px #00000047*/
     /*height: 450px;*/
   }
 </style>
