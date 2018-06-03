@@ -22,9 +22,10 @@ import {
 import { Scroll} from 'vuetify/es5/directives'
 
 import AOS from 'aos'
-import 'aos/dist/aos.css'
+import '../node_modules/aos/dist/aos.css'
 
 import '../node_modules/vuetify/src/stylus/app.styl'
+// import "vue-material-design-icons/styles.css"
 Vue.use(Vuetify, {
   components: {
     VApp,

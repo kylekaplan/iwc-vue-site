@@ -1,10 +1,9 @@
 <template>
   <div class="us" id="us">
-    <h2>What We Believe</h2>
+    <h2>WHAT WE BELIEVE</h2>
     <p class="subline">
-      At Ideas Worth Coding we turn dreams into reality. We love what we do and we think you should feel the same way too. Have a light-bulb moment you think is a great idea?
-      We'll bring it to life. Our team consists of bright individuals who think different which we think is key to success. Creativity and innovation are at the center of what we do,
-      and clients can be sure that their best interests will always be placed first.
+      At Ideas Worth Coding, we don't just make apps and websites. Our core values are rooted in creativity, adventure, and innovation. We wake up everyday excited to transform
+      big ideas into beautiful, simple designs. We honor those who think outside the box and believe that new frontiers are waiting to be discovered, with our team at the helm of it.
     </p>
     <!--<img src="/static/img/cliff1.png"/>-->
   </div>
@@ -38,6 +37,12 @@
     /*margin-bottom: 70px;*/
     /*text-align: center;*/
     will-change: transform;
+  }
+  @media only screen and (max-width: 740px) {
+    .subline {
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 
   .us.modify {

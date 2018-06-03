@@ -11,8 +11,12 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --remote=gh-pages"
   },
   "dependencies": {
+    "aos": "^2.3.0",
+    "axios": "^0.18.0",
+    "mdi": "^2.2.43",
     "push-dir": "^0.4.1",
     "vue": "^2.5.2",
+    "vue-material-design-icons": "^1.5.1",
     "vue-parallaxy": "^1.1.1",
     "vue-router": "^3.0.1",
     "vuetify": "^1.0.0"

@@ -46,7 +46,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import axios from '../../node_modules/axios/index'
   export default {
     name: "contact-us",
     data: () => ({

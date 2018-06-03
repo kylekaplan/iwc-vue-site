@@ -449,9 +449,6 @@
     /*background-color: #565656;*/
     /*color: transparent;*/
     text-shadow: 2px 2px 3px rgba(156, 156, 156, 0.5);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
   }
 
   .intro-effect-fadeout.modify .header p:nth-child(2) {
