@@ -485,7 +485,7 @@
   /*}*/
   @media only screen and (max-width: 740px) {
     .myHeader {
-      width: 350px !important;
+      width: 275px !important;
       margin-bottom: 10px !important;
     }
   }

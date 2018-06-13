@@ -138,6 +138,12 @@
   .ourWork {
     position: relative;
     z-index: 1000;
+    /*padding: 6px !important;*/
+  }
+  @media only screen and (max-width: 740px) {
+    .ourWork {
+      padding: 2px !important;
+    }
   }
   .ourWork:before, .ourWork:after {
     content: "";

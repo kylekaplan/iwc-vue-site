@@ -7,7 +7,7 @@
 
     >
       <v-toolbar-items>
-        <img src="@/assets/logo.png" style='height: 35px; width: 35px !important; margin-top: 5px;'>
+        <!--<img src="@/assets/logo.png" style='height: 35px; width: 35px !important; margin-top: 5px;'>-->
       </v-toolbar-items>
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
@@ -31,10 +31,12 @@
     z-index: 1;
   }
   .content--wrap {
-    background: #4a4a4a;
-    background: #194254;
+    /*background: #4a4a4a;*/
+    /*background: #194254;*/
     /*background: #03435f;*/
     /*background: #116e98;*/
+    background: hsla(202, 50%, 50%, 1);
+    /*background: hsla(206, 91%, 50%, 1);*/
   }
 </style>
 

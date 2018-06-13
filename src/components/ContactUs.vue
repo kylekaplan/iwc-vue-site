@@ -1,5 +1,5 @@
 <template>
-  <div class="about-us">
+  <div class="contact-us">
   <v-container grid-list-md text-xs-center>
     <p class="my-title">Let's Build Something</p>
   <v-form ref="form" v-model="valid" lazy-validation action="https://formspree.io/ideasworthcoding@gmail.com"
@@ -83,9 +83,11 @@
 </script>
 
 <style scoped>
-  .about-us {
-    background: sienna;
-    background: #fd6d28;
+  .contact-us {
+    /*background: sienna;*/
+    /*background: #fd6d28;*/
+    background: hsla(475, 50%, 50%, 1);
+    background-color: #4abf40;
   }
   .primary--text {
     color: #4487ee !important;
@@ -129,5 +131,11 @@
     height: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  @media only screen and (max-width: 740px) {
+    .form {
+      width: 85%;
+    }
   }
 </style>
