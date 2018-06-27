@@ -96,7 +96,7 @@
             name: 'USF PAMSA',
             logo: '/static/img/portfolio/pamsa1.jpg',
             logoColor: '#f5f5f5',
-            description: 'The official app of USF PAMSA',
+            description: 'The official app for USF PAMSA',
             link: 'https://itunes.apple.com/us/app/usf-pamsa/id1350090439',
           },
           {

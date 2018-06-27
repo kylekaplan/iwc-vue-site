@@ -5,14 +5,19 @@
     <a href="https://www.linkedin.com/company/ideas-worth-coding/" target="_blank">
       <linkedin-box-icon title="Find us on LinkedIn!" />
     </a>
+    <a href="https://www.facebook.com/IdeasWorthCoding/" target="_blank">
+      <facebook-box-icon title="Find us on Facebook!" />
+    </a>
   </v-container>
 </template>
 
 <script>
   import LinkedinBoxIcon from "vue-material-design-icons/linkedin-box";
+  import FacebookBoxIcon from "vue-material-design-icons/facebook-box"
   export default {
     components: {
       LinkedinBoxIcon,
+      FacebookBoxIcon,
     },
     name: "footer"
   }
