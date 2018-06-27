@@ -47,6 +47,9 @@
   import ContactUs from "./components/ContactUs";
   import MyFooter from "./components/MyFooter";
   import AboutUs from "./components/AboutUs"
+  import AOS from 'aos'
+  // import '../node_modules/aos/dist/aos.css'
+
 export default {
   // beforeCreate: function() {
   //   document.body.className = 'hideScrollBar';
@@ -79,6 +82,9 @@ export default {
         this.toolbarVisibility = 'none'
       }
     }
+  },
+  mounted() {
+    AOS.init();
   },
   name: 'App'
 }

@@ -8,7 +8,7 @@ Vue.use(Router)
 
 // const USF = { template: '<div>USF</div>' }
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   base: __dirname,
   routes: [
     {

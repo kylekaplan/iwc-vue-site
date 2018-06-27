@@ -1,9 +1,9 @@
 <template>
-  <v-container fullscreen grid-list-xl text-xs-center justify-end class="ourWork noise">
+  <v-container fullscreen grid-list-xl text-xs-center justify-end class="ourWork">
     <div style="margin-top: -15px;">
       <h1>USF Student Toolbox</h1>
-      <v-layout row wrap align-center class="caption-style-4">
-        <v-flex v-for="item in items" :key="item.key" xs12 sm6 lg4 xl3 px-4 v-scroll="onScroll">
+      <v-layout row wrap align-center class="USFcaption-style-4">
+        <v-flex v-for="item in items" :key="item.key" xs12 sm6 lg4 x4 px-4>
           <div data-aos="zoom-in"
                data-aos-easing="linear"
                data-aos-offset="50">
@@ -12,8 +12,8 @@
                 <img :src="item.logo" :alt="item.name" />
               </li>
             </a>
-            <div class="caption-text">
-              <p>{{item.description}}</p>
+            <div class="USFcaption-text">
+              <p>{{item.description}}<span v-if="item.credit" v-html="item.credit"></span></p>
             </div>
           </div>
         </v-flex>
@@ -45,6 +45,7 @@
             logo: '/static/img/USFPortfolio/quip.JPG',
             logoColor: '#775645',
             description: 'Find and get directions to any building, completely free.',
+            credit: ' By: <a style="color: #000;" href="http://fadibitar.me/" target="_blank">Fadi Bitar</a> and <a style="color: #000;" href="http://vinnakota.co.in/" target="_blank">Saikrishna Vinnakota</a>.',
             link: 'http://quipapp.us/',
           },
           {
@@ -69,6 +70,7 @@
             logo: '/static/img/USFPortfolio/feedabull.jpg',
             logoColor: '#FFF',
             description: 'Feed-A-Bull strives to alleviate food hardship and hunger among USF students.',
+            credit: ' By: <a style="color: #000;" href="https://www.usf.edu/student-affairs/student-health-services/" target="_blank">USF Health Services</a>.',
             link: 'http://www.usf.edu/student-affairs/student-health-services/services/feed-a-bull-food-pantry.aspx',
           },
         ],
@@ -85,11 +87,14 @@
     font-family: sans-serif;
     margin-top: 40px;
     margin-bottom: 60px;
+    text-align: center;
+    padding: 4px;
   }
-  .caption-style-4 {
+  .USFcaption-style-4 {
     margin: auto 20px !important;
+    margin-bottom: 6px !important;
   }
-  .caption-style-4 li {
+  .USFcaption-style-4 li {
     padding: 0;
     position: relative;
     display: inline-block;
@@ -113,17 +118,17 @@
     -ms-transition: filter 0.25s ease-in-out;
     transition: filter 0.25s ease-in-out;
   }
-  .caption-style-4 li:hover {
+  .USFcaption-style-4 li:hover {
     /*filter: sepia(0.5);*/
   }
-  .caption-style-4 img {
+  .USFcaption-style-4 img {
     -webkit-transition: all 0.25s ease-in-out;
     -moz-transition: all 0.25s ease-in-out;
     -o-transition: all 0.25s ease-in-out;
     -ms-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
   }
-  .caption-style-4 img {
+  .USFcaption-style-4 img {
     padding: 0px;
     z-index: 4;
     position: relative;
@@ -135,7 +140,7 @@
     width: 75%;
     /*max-width: 100%;*/
   }
-  .caption-style-4 li:hover img {
+  .USFcaption-style-4 li:hover img {
     transform: scale(1.1,1.1);
     -webkit-transform: scale(1.1,1.1);
     -moz-transform: scale(1.1,1.1);
@@ -143,7 +148,7 @@
     -o-transform: scale(1.1,1.1);
   }
 
-  .caption-style-4 .caption-text {
+  .USFcaption-style-4 .USFcaption-text {
     position: relative;
     margin: auto;
     margin-top: 8px;
@@ -153,5 +158,13 @@
     width: 81%;
     text-align: center;
     font-size: 18px;
+  }
+  @media only screen and (max-width: 740px) {
+    .ourWork {
+      padding: 2px !important;
+    }
+    .USFcaption-style-4 .USFcaption-text {
+      height: 130px;
+    }
   }
 </style>
